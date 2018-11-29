@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { ConsoPage } from '../conso/conso';
+import { SingleTableConsoPage } from '../single-table-conso/single-table-conso';
+import { SingleTableProPage } from '../single-table-pro/single-table-pro';
 
 @Component({
   selector: 'page-home',
@@ -14,8 +15,15 @@ export class HomePage {
 
   }
 
+  // listen(table: string) {
+  //   console.log(table);
+  // }
+
   onGoToConsoTable(table: string) {
-    this.navCtrl.push(ConsoPage, {NumberTable: table});
+    this.navCtrl.push(SingleTableConsoPage, {numberTable: table});
   }
 
+  onGoToProTable(table: string) {
+    this.navCtrl.push(SingleTableProPage, {numberTable: table});
+  }
 }

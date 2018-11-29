@@ -1,24 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the SingleTableConsoPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @Component({
   selector: 'page-single-table-conso',
   templateUrl: 'single-table-conso.html',
 })
-export class SingleTableConsoPage {
+export class SingleTableConsoPage implements OnInit {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  table: string;
+
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SingleTableConsoPage');
+  ngOnInit() {
+    this.table = this.navParams.get('numberTable');
   }
 
 }
