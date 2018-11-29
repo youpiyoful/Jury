@@ -6,11 +6,15 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { SingleTableProPage } from '../pages/single-table-pro/single-table-pro';
+import { SingleTableConsoPage } from '../pages/single-table-conso/single-table-conso';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    SingleTableProPage,
+    SingleTableConsoPage
   ],
   imports: [
     BrowserModule,
@@ -19,7 +23,9 @@ import { HomePage } from '../pages/home/home';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    SingleTableProPage,
+    SingleTableConsoPage
   ],
   providers: [
     StatusBar,
