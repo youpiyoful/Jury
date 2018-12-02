@@ -8,6 +8,8 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { SingleTableProPage } from '../pages/single-table-pro/single-table-pro';
 import { SingleTableConsoPage } from '../pages/single-table-conso/single-table-conso';
+import { WinsService } from '../services/wins.service';
+
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { SingleTableConsoPage } from '../pages/single-table-conso/single-table-c
   providers: [
     StatusBar,
     SplashScreen,
+    WinsService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

@@ -8,8 +8,8 @@
 
 <ion-content padding>
   <ion-item>
-    <ion-label floating></ion-label>
-    <ion-input type="text" [(ngModel)]="table"></ion-input>
+    <!-- <ion-label floating></ion-label> -->
+    <ion-input type="number" [(ngModel)]="table"></ion-input>
   </ion-item>
   <button ion-button (click)="onGoToConsoTable(table)">Consommateur</button>
   <button ion-button (click)="onGoToProTable(table)">Expert</button>

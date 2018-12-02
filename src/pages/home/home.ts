@@ -9,21 +9,16 @@ import { SingleTableProPage } from '../single-table-pro/single-table-pro';
 })
 export class HomePage {
 
-  // table: string;
 
   constructor(public navCtrl: NavController) {
 
   }
 
-  // listen(table: string) {
-  //   console.log(table);
-  // }
-
-  onGoToConsoTable(table: string) {
+  onGoToConsoTable(table: number) {
     this.navCtrl.push(SingleTableConsoPage, {numberTable: table});
   }
 
-  onGoToProTable(table: string) {
+  onGoToProTable(table: number) {
     this.navCtrl.push(SingleTableProPage, {numberTable: table});
   }
 }

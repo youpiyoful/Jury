@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
+// import { WinsSer}
 
 @Component({
   selector: 'page-single-table-pro',
@@ -8,7 +8,7 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class SingleTableProPage implements OnInit {
 
-  table: string;
+  table: number;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -16,5 +16,5 @@ export class SingleTableProPage implements OnInit {
   ngOnInit() {
     this.table = this.navParams.get('numberTable');
   }
-  
+
 }
