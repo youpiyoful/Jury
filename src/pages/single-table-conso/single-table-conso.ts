@@ -11,7 +11,9 @@ import DataSnapshot = firebase.database.DataSnapshot;
 export class SingleTableConsoPage implements OnInit {
 
   table: number;
-  winFromTable: Array<string>;
+  winsFromTable: Array<string>;
+  dataFromTable: Array<string>;
+  // idWin: Array<number>;
   // allData: Array<string>;
 
   constructor(public navCtrl: NavController,
@@ -20,14 +22,15 @@ export class SingleTableConsoPage implements OnInit {
 
   ngOnInit() {
     this.table = +this.navParams.get('numberTable'); // i use + for converting my numberTable string in a number variable
+    this.retrieveData();
   }
 
   // emitWins() {
-  //   this.winFromTable.next(this.)
+  //   this.winsFromTable.next(this.)
   // }
-  // winFromTable()
+  // winsFromTable()
 
-  map(file, data, search, result) {
+  searchData(file, data, search, result) {
     for (let i = 0; i < file.length; i++ ) {
       if (file[i][data] === search) {
         result =  file[i];
@@ -40,6 +43,14 @@ export class SingleTableConsoPage implements OnInit {
     }
   }
 
+  convertObjectToArray(elt, object, elts) {
+    for (let i = 0; i < Object.keys(object).length; i++) {
+      if (Object.keys(object) === object['elt' + i]){
+        elts.push(object['elt'+ i]);
+      }
+    }
+    console.log(elts);
+  }
 
   retrieveData() {
     return new Promise((resolve, reject) => {
@@ -57,10 +68,17 @@ export class SingleTableConsoPage implements OnInit {
           // } else {
           //   console.log('coucou');
           // }
-          console.log(this.map(data.val(), 'id_degust_conso', this.table, this.winFromTable));// remplacer 0 par le numéro de la table donné par l'utilisateur
-          this.map(data.val(), 'id_degust_conso', this.table, this.winFromTable);// remplacer 0 par le numéro de la table donné par l'utilisateur
+          console.log(this.searchData(data.val(), 'id_degust_conso', this.table, this.dataFromTable));// remplacer 0 par le numéro de la table donné par l'utilisateur
+          this.dataFromTable = this.searchData(data.val(), 'id_degust_conso', this.table, this.dataFromTable);
+          // console.log(this.convertObjectToArray('vin_', this.winsFromTable, this.idWin));
+
+          this.winsFromTable = Object.values(this.dataFromTable.slice(1));
+          this.table = Object.values(this.dataFromTable).slice(0, 1);
+          // console.log(Object.keys(this.winsFromTable).values());
+          // console.log(this.winsFromTable['vin_1']);
+          // this.winsFromTable.slice(1, 6);
           // this.emitAppareils();
-          // let result = this.winFromTable.filter(winFromTable => winFromTable.length > 6);
+          // let result = this.winsFromTable.filter(winsFromTable => winsFromTable.length > 6);
           // console.log(result);
 
           // ---------------------------------------------------------------------------------------------------//
