@@ -40,6 +40,7 @@ export class SingleTableConsoPage implements OnInit {
     }
   }
 
+
   retrieveData() {
     return new Promise((resolve, reject) => {
       firebase.database().ref('TableConso').once('value').then(
@@ -57,7 +58,15 @@ export class SingleTableConsoPage implements OnInit {
           //   console.log('coucou');
           // }
           console.log(this.map(data.val(), 'id_degust_conso', this.table, this.winFromTable));// remplacer 0 par le numéro de la table donné par l'utilisateur
+          this.map(data.val(), 'id_degust_conso', this.table, this.winFromTable);// remplacer 0 par le numéro de la table donné par l'utilisateur
           // this.emitAppareils();
+          // let result = this.winFromTable.filter(winFromTable => winFromTable.length > 6);
+          // console.log(result);
+
+          // ---------------------------------------------------------------------------------------------------//
+          // -------------------------- regarder du côté de emitBooks et .next ---------------------------------//
+          // ---------------------------------------------------------------------------------------------------//
+
           resolve('Données récupérées avec succès !');
         }, (error) => {
           reject(error);
@@ -65,6 +74,7 @@ export class SingleTableConsoPage implements OnInit {
       );
     });
   }
+
 
   // firebase.database().ref().on('value', (snapshot) => {
   //   let result = snapshot.value();
