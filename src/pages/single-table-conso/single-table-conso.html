@@ -1,15 +1,18 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>single-table-conso</ion-title>
+    <ion-title>Les Eminents de Bourgogne</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-  <p>{{ table }}</p>
-  <div *ngFor=""></div>
-
-  <button ion-button (click)="retrieveData()"></button>
+  <p>Table numéro : {{ table }}</p>
+  <p>liste des vins : </p>
+  <ion-list inset>
+    <ion-item *ngFor="let win of winsFromTable">
+      Vin N°{{ win }}
+    </ion-item>
+  </ion-list>
 </ion-content>

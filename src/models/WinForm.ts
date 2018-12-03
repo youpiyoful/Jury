@@ -1,3 +1,3 @@
-export class Win {
+export class WinForm {
   constructor(public name: string) {}
 }
