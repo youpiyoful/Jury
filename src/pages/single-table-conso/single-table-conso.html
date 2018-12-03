@@ -10,9 +10,9 @@
 <ion-content padding>
   <p>Table numéro : {{ table }}</p>
   <p>liste des vins : </p>
-  <ion-list inset>
-    <ion-item *ngFor="let win of winsFromTable">
+  <ion-list>
+    <button ion-item *ngFor="let win of winsFromTable" (click)="onGoToSurveyWin(table, win)">
       Vin N°{{ win }}
-    </ion-item>
+    </button>
   </ion-list>
 </ion-content>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, NavParams, ToastController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
+import { SurveyWinConsoPage } from './survey-win-conso/survey-win-conso';
 
 import * as firebase from 'firebase';
 import DataSnapshot = firebase.database.DataSnapshot;
@@ -15,8 +16,7 @@ export class SingleTableConsoPage implements OnInit {
   dataFromTable: Array<string>;
 
   constructor(public navCtrl: NavController,
-              public navParams: NavParams,
-              private toastCtrl: ToastController,) {
+              public navParams: NavParams) {
   }
 
   ngOnInit() {
@@ -44,16 +44,17 @@ export class SingleTableConsoPage implements OnInit {
           // console.log(this.searchData(data.val(), 'id_degust_conso', this.table, this.dataFromTable));
           this.dataFromTable = this.searchData(data.val(), 'id_degust_conso', this.table, this.dataFromTable);
           this.winsFromTable = Object.values(this.dataFromTable).slice(1);
-          // this.table = Object.values(this.dataFromTable).slice(0, 1);
+          // this.idW = Object.values(this.dataFromTable).slice(0, 1);
           resolve('Données récupérées avec succès !');
         }, (error) => {
-          this.toastCtrl.create({
-            message: error,
-            duration: 3000,
-            position: 'bottom'
-          }).present();
+          reject(error);
         }
       );
     });
   }
+
+  onGoToSurveyWin(idTable: number, idWin: number) {
+    this.navCtrl.push(SurveyWinConsoPage, {idSurvey: [idTable.toString() + idWin.toString()]});
+  }
+
 }
