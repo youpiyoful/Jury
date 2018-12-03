@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, LoadingController, ToastController } from 'ionic-angular';
 import { SurveyWinConsoPage } from './survey-win-conso/survey-win-conso';
+import { WinsService } from '../../services/wins.service';
 
 import * as firebase from 'firebase';
 import DataSnapshot = firebase.database.DataSnapshot;
@@ -12,45 +13,17 @@ import DataSnapshot = firebase.database.DataSnapshot;
 export class SingleTableConsoPage implements OnInit {
 
   table: number;
-  winsFromTable: Array<string>;
-  dataFromTable: Array<string>;
 
   constructor(public navCtrl: NavController,
-              public navParams: NavParams) {
-  }
+              public navParams: NavParams,
+              private winsService: WinsService,
+              private toastCtrl: ToastController,
+              private loadingCtrl: LoadingController) {}
 
   ngOnInit() {
     this.table = +this.navParams.get('numberTable'); // i use + for converting my numberTable string in a number variable
-    this.retrieveData();
-  }
-
-  searchData(file, data, search, result) {
-    for (let i = 0; i < file.length; i++ ) {
-      if (file[i][data] === search) {
-        result =  file[i];
-      }
-    }
-    if (!result) {
-      console.log("cette table n'existe pas");
-    } else {
-      return result;
-    }
-  }
-
-  retrieveData() {
-    return new Promise((resolve, reject) => {
-      firebase.database().ref('TableConso').once('value').then(
-        (data: DataSnapshot) => {
-          // console.log(this.searchData(data.val(), 'id_degust_conso', this.table, this.dataFromTable));
-          this.dataFromTable = this.searchData(data.val(), 'id_degust_conso', this.table, this.dataFromTable);
-          this.winsFromTable = Object.values(this.dataFromTable).slice(1);
-          // this.idW = Object.values(this.dataFromTable).slice(0, 1);
-          resolve('Données récupérées avec succès !');
-        }, (error) => {
-          reject(error);
-        }
-      );
-    });
+    this.winsService.retrieveData(this.table);
+    this.winsService.winsFromTable; // i moove all the logic in winsService
   }
 
   onGoToSurveyWin(idTable: number, idWin: number, iterator: number) {
