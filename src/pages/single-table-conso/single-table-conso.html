@@ -11,7 +11,7 @@
   <p>Table numéro : {{ table }}</p>
   <p>liste des vins : </p>
   <ion-list>
-    <button ion-item *ngFor="let win of winsFromTable; let i = index" (click)="onGoToSurveyWin(table, win, i+1)">
+    <button ion-item *ngFor="let win of winsFromTable; let i = index" (click)="onGoToSurveyWin(table, win, i)">
       Vin N°{{ win }} {{ i + 1}}/6
     </button>
   </ion-list>
