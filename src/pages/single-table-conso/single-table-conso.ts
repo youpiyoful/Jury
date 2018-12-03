@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ToastController } from 'ionic-angular';
 
 import * as firebase from 'firebase';
 import DataSnapshot = firebase.database.DataSnapshot;
@@ -15,7 +15,8 @@ export class SingleTableConsoPage implements OnInit {
   dataFromTable: Array<string>;
 
   constructor(public navCtrl: NavController,
-              public navParams: NavParams) {
+              public navParams: NavParams,
+              private toastCtrl: ToastController,) {
   }
 
   ngOnInit() {
@@ -46,7 +47,11 @@ export class SingleTableConsoPage implements OnInit {
           // this.table = Object.values(this.dataFromTable).slice(0, 1);
           resolve('Données récupérées avec succès !');
         }, (error) => {
-          reject(error);
+          this.toastCtrl.create({
+            message: error,
+            duration: 3000,
+            position: 'bottom'
+          }).present();
         }
       );
     });
