@@ -53,8 +53,8 @@ export class SingleTableConsoPage implements OnInit {
     });
   }
 
-  onGoToSurveyWin(idTable: number, idWin: number) {
-    this.navCtrl.push(SurveyWinConsoPage, {idSurvey: [idTable.toString() + idWin.toString()]});
+  onGoToSurveyWin(idTable: number, idWin: number, iterator: number) {
+    this.navCtrl.push(SurveyWinConsoPage, {idSurvey: [idTable.toString() + idWin.toString() + iterator.toString()]});
   }
 
 }
