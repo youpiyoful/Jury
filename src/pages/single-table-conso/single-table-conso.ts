@@ -43,7 +43,7 @@ export class SingleTableConsoPage implements OnInit {
           // console.log(this.searchData(data.val(), 'id_degust_conso', this.table, this.dataFromTable));
           this.dataFromTable = this.searchData(data.val(), 'id_degust_conso', this.table, this.dataFromTable);
           this.winsFromTable = Object.values(this.dataFromTable).slice(1);
-          this.table = Object.values(this.dataFromTable).slice(0, 1);
+          // this.table = Object.values(this.dataFromTable).slice(0, 1);
           resolve('Données récupérées avec succès !');
         }, (error) => {
           reject(error);

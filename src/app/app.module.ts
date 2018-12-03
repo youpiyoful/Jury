@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import { SingleTableProPage } from '../pages/single-table-pro/single-table-pro';
 import { SingleTableConsoPage } from '../pages/single-table-conso/single-table-conso';
 import { WinsService } from '../services/wins.service';
+import { SurveyWinConsoPage } from '../pages/single-table-conso/survey-win-conso/survey-win-conso';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { WinsService } from '../services/wins.service';
     MyApp,
     HomePage,
     SingleTableProPage,
-    SingleTableConsoPage
+    SingleTableConsoPage,
+    SurveyWinConsoPage
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,8 @@ import { WinsService } from '../services/wins.service';
     MyApp,
     HomePage,
     SingleTableProPage,
-    SingleTableConsoPage
+    SingleTableConsoPage,
+    SurveyWinConsoPage
   ],
   providers: [
     StatusBar,
