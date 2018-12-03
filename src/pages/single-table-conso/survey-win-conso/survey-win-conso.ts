@@ -9,11 +9,15 @@ import { NavController, NavParams } from 'ionic-angular';
 export class SurveyWinConsoPage implements OnInit {
 
   idForm: number; // it s a mix between idTable and idWin for an unic id for survey
+  idWin: number;
+  idTable: number;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams) {}
 
   ngOnInit() {
+    this.idWin =+ this.navParams.get('idSurvey').toString().slice(0,3); // i use toString for explode the array and select what i want
+    this.idTable =+ this.navParams.get('idSurvey').toString().slice(3); // slice for select what i want in the new array
     this.idForm =+ this.navParams.get('idSurvey');
   }
 }
