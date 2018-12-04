@@ -1,5 +1,5 @@
 import { WinForm } from '../models/WinForm';
-import { SingleTableConsoPage } from '../pages/single-table-conso/single-table-conso';
+// import { SingleTableConsoPage } from '../pages/single-table-conso/single-table-conso';
 
 import * as firebase from 'firebase';
 import DataSnapshot = firebase.database.DataSnapshot;
@@ -17,7 +17,7 @@ export class WinsService {
       }
     }
     if (!result) {
-      console.log("cette table n'existe pas");
+      alert("cette table n'existe pas");
     } else {
       return result;
     }
