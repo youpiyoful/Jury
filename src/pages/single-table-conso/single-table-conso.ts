@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, NavParams, LoadingController, ToastController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { SurveyWinConsoPage } from './survey-win-conso/survey-win-conso';
 import { WinsService } from '../../services/wins.service';
 
-import * as firebase from 'firebase';
-import DataSnapshot = firebase.database.DataSnapshot;
+// import * as firebase from 'firebase';
+// import DataSnapshot = firebase.database.DataSnapshot;
 
 @Component({
   selector: 'page-single-table-conso',
@@ -16,9 +16,7 @@ export class SingleTableConsoPage implements OnInit {
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
-              private winsService: WinsService,
-              private toastCtrl: ToastController,
-              private loadingCtrl: LoadingController) {}
+              private winsService: WinsService) {}
 
   ngOnInit() {
     this.table = +this.navParams.get('numberTable'); // i use + for converting my numberTable string in a number variable

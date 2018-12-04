@@ -2,6 +2,7 @@ export class WinForm {
   constructor(public idForm: number,
               public idTable: number,
               public idWin: number,
+              public iteratorWin: number,
               public blindTest: number,
               public winAndBottleTest: number,
               public bottleShape: string,
@@ -9,5 +10,6 @@ export class WinForm {
               public bottleCap: string,
               public labelColor: string,
               public labelShape: string,
-              public labelMessage: string) {}
+              public labelMessage: string
+            ) {}
 }
