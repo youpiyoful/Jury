@@ -11,12 +11,14 @@
     <ion-slides pager>
 
       <ion-slide style="background-color: green">
-        <h2>Slide 1</h2>
-        <ion-range min max="10" [(ngModel)]="blindTest" col-6 push-3 color="gold">
-          <ion-icon range-left small name="md-thumbs-down" color="gold"></ion-icon>
+        <ion-header>
+          <h2>Slide 1</h2>
+        </ion-header>
+        <ion-range min="0" max="10" [(ngModel)]="blindTest" col-6 push-3 color="gold">
+          <ion-icon range-left  name="md-thumbs-down" color="gold"></ion-icon>
           <ion-icon range-right name="md-thumbs-up" color="gold"></ion-icon>
         </ion-range>
-        <form [formGroup]="surveyWinConso" style="height: 100%;">
+        <form [formGroup]="surveyWinConso">
           <ion-label>Test aveugle</ion-label>
           <ion-input formControlName="blindTest" value={{blindTest}} col-6 push-3>/10</ion-input>
         </form>
@@ -28,13 +30,15 @@
       </ion-slide>
 
       <ion-slide style="background-color: blue">
-        <h2>Test bouteille et vin</h2>
-        <ion-range min="0" max="10" [(ngModel)]="winAndBottleTest" col-10 push-1 color="gold">
+        <ion-header>
+          <h2>Test bouteille et vin</h2>
+        </ion-header>
+        <ion-range min="0" max="10" [(ngModel)]="winAndBottleTest" col-6 push-3 color="gold">
             <ion-icon range-left name="md-thumbs-down" color="gold">Je n'aime pas</ion-icon>
             <ion-icon range-right name="md-thumbs-up" color="gold">J'aime</ion-icon>
         </ion-range>
-        <form [formGroup]="surveyWinConso" style="height: 100%;">
-          <ion-label>Quel note attribuez-vous</ion-label>
+        <form [formGroup]="surveyWinConso">
+          <ion-label>Quelle note attribuez-vous</ion-label>
           <ion-input formControlName="winAndBottleTest" value={{winAndBottleTest}} col-6 push-3></ion-input>
         </form>
         <ion-footer>
@@ -45,15 +49,29 @@
       </ion-slide>
 
       <ion-slide style="background-color: red">
-        <h2>Slide 3</h2>
+        <ion-header>
+          <h2>Slide 3</h2>
+        </ion-header>
         <ion-row justify-content-around>
           <ion-col col-4>
             <ion-icon name="sunny"></ion-icon>
           </ion-col>
-          <ion-col col-4 justify-content-center>
-            <ion-row>1</ion-row>
-            <ion-row>2</ion-row>
-            <ion-row>3</ion-row>
+          <ion-col col-4 class="vertical-space-around">
+            <ion-row justify-content-around>
+                <ion-checkbox color="dark" checked="false"></ion-checkbox>
+                <ion-checkbox color="dark" checked="false"></ion-checkbox>
+                <ion-checkbox color="dark" checked="false"></ion-checkbox>
+            </ion-row>
+            <ion-row justify-content-around>
+              <ion-checkbox color="dark" checked="false"></ion-checkbox>
+              <ion-checkbox color="dark" checked="false"></ion-checkbox>
+              <ion-checkbox color="dark" checked="false"></ion-checkbox>
+            </ion-row>
+            <ion-row justify-content-around>
+              <ion-checkbox color="dark" checked="false"></ion-checkbox>
+              <ion-checkbox color="dark" checked="false"></ion-checkbox>
+              <ion-checkbox color="dark" checked="false"></ion-checkbox>
+            </ion-row>
           </ion-col>
         </ion-row>
         <ion-footer>
@@ -64,7 +82,9 @@
       </ion-slide>
 
       <ion-slide style="background-color: red">
-        <h2>Slide 4</h2>
+        <ion-header>
+          <h2>Slide 4</h2>
+        </ion-header>
         <button ion-button color="gold" (click)="onSubmitForm()">Enregistrer</button>
         <ion-footer>
           <button ion-button col-2 push-4 round color="gold">

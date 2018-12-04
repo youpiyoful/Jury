@@ -1,5 +1,17 @@
 page-survey-win-conso {
-  ion-range: {
-    height: $range-md-slider-height;
+
+  ion-range {
+    height: $range-md-slider-height !important;
   }
+
+  form {
+    height: 100%;
+  }
+
+  .vertical-space-around {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+  }
+
 }
