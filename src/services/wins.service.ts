@@ -38,4 +38,19 @@ export class WinsService {
       );
     });
   }
+
+  saveData() {
+    return new Promise((resolve, reject) => {
+      firebase.database().ref('jury-53d6c').set(this.winFormList).then(
+        (data: DataSnapshot) => {
+          resolve(data);
+        },
+        (error) => {
+          reject(error);
+        }
+      );
+    });
+  }
+
+
 }
