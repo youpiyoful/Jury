@@ -71,12 +71,8 @@ export class SurveyWinConsoPage implements OnInit {
       this.surveyWinConso.get('labelShape').value,
       this.surveyWinConso.get('labelMessage').value
     );
-    if (WinForm) {
-      this.winsService.addWinForm(newWinForm);
-      console.log(this.winsService.winFormList);
-      this.navCtrl.pop();
-    } else {
-      alert("vous n'avez pas tous validé");
-    }
+    this.winsService.addWinForm(newWinForm);
+    console.log(this.winsService.winFormList);
+    this.navCtrl.pop();
   }
 }

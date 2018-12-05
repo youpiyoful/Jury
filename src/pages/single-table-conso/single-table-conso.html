@@ -9,11 +9,13 @@
 
 <ion-content padding>
   <p>Table numéro : {{ table }}</p>
-  <p>liste des vins : </p>
+  <p>liste des vins :  </p>
   <ion-list>
-    <button ion-item *ngFor="let win of winsService.winsFromTable; let i = index" (click)="onGoToSurveyWin(table, win, i)">
+    <button ion-item
+            *ngFor="let win of winsService.winsFromTable; let i = index"
+            (click)="onGoToSurveyWin(table, win, i)"><!--[disabled]="winsService.winsFromTable"-->
       Vin N°{{ win }} {{ i + 1}}/6
     </button>
   </ion-list>
-  <button ion-button>Soumettez vos avis</button>
+  <button ion-button (click)="onSaveList()">Soumettez vos avis</button><!--[disabled]=""-->
 </ion-content>
