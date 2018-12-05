@@ -10,7 +10,7 @@ import { SingleTableProPage } from '../pages/single-table-pro/single-table-pro';
 import { SingleTableConsoPage } from '../pages/single-table-conso/single-table-conso';
 import { WinsService } from '../services/wins.service';
 import { SurveyWinConsoPage } from '../pages/single-table-conso/survey-win-conso/survey-win-conso';
-// import { Environment } from '../environment/environment';
+import { Environment } from '../environment/environment';
 
 @NgModule({
   declarations: [
@@ -36,7 +36,7 @@ import { SurveyWinConsoPage } from '../pages/single-table-conso/survey-win-conso
     StatusBar,
     SplashScreen,
     WinsService,
-    // Environment,
+    Environment,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
