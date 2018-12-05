@@ -53,24 +53,45 @@
           <h2>Slide 3</h2>
         </ion-header>
         <ion-row justify-content-around>
-          <ion-col col-4>
-            <ion-icon name="sunny"></ion-icon>
+          <ion-col col-3 align-self-center class="padding-bottom">
+            <ion-img width="84" height="257" src="../../assets/imgs/bottle.svg"></ion-img>
           </ion-col>
-          <ion-col col-4 class="vertical-space-around">
+            <ion-col class="padding-bottom" col-3 align-self-end>
+              <form [formGroup]="surveyWinConso">
+              <ion-row>
+                <p>La forme de la bouteille</p>
+                <ion-input formControlName={{bottleShape}}></ion-input>
+              </ion-row>
+              <ion-row>
+                <p>La couleur de la bouteille</p>
+                <ion-input formControlName={{bottleColor}}></ion-input>
+              </ion-row>
+              <ion-row>
+                <p>La coiffe et la collerette</p>
+                <ion-input formControlName={{bottleCap}}></ion-input>
+              </ion-row>
+            </form>
+            </ion-col>
+          <ion-col col-3 align-self-center>
             <ion-row justify-content-around>
-                <ion-checkbox color="dark" checked="false"></ion-checkbox>
-                <ion-checkbox color="dark" checked="false"></ion-checkbox>
-                <ion-checkbox color="dark" checked="false"></ion-checkbox>
+              <p>Positif</p>
+              <p>Neutre</p>
+              <p>Négatif</p>
             </ion-row>
-            <ion-row justify-content-around>
-              <ion-checkbox color="dark" checked="false"></ion-checkbox>
-              <ion-checkbox color="dark" checked="false"></ion-checkbox>
-              <ion-checkbox color="dark" checked="false"></ion-checkbox>
+            <ion-row justify-content-around radio-group [(ngModel)]="bottleShape" form>
+              <ion-radio value="positif" color="dark"></ion-radio>
+              <ion-radio value="neutre" color="dark"></ion-radio>
+              <ion-radio value="negatif" color="dark"></ion-radio>
             </ion-row>
-            <ion-row justify-content-around>
-              <ion-checkbox color="dark" checked="false"></ion-checkbox>
-              <ion-checkbox color="dark" checked="false"></ion-checkbox>
-              <ion-checkbox color="dark" checked="false"></ion-checkbox>
+            <ion-row justify-content-around radio-group [(ngModel)]="bottleColor">
+              <ion-radio value="positif" color="dark"></ion-radio>
+              <ion-radio value="neutre" color="dark"></ion-radio>
+              <ion-radio value="negatif" color="dark"></ion-radio>
+            </ion-row>
+            <ion-row justify-content-around radio-group [(ngModel)]="bottleCap">
+              <ion-radio value="positif" color="dark"></ion-radio>
+              <ion-radio value="neutre" color="dark"></ion-radio>
+              <ion-radio value="negatif" color="dark"></ion-radio>
             </ion-row>
           </ion-col>
         </ion-row>

@@ -18,6 +18,9 @@ export class SurveyWinConsoPage implements OnInit {
   surveyWinConso: FormGroup;
   blindTest: number = 5;
   winAndBottleTest: number = 5;
+  bottleShape: string;
+  bottleColor: string;
+  bottleCap: string;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
