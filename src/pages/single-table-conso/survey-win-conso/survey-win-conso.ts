@@ -18,9 +18,9 @@ export class SurveyWinConsoPage implements OnInit {
   surveyWinConso: FormGroup;
   blindTest: number = 5;
   winAndBottleTest: number = 5;
-  bottleShape: string;
-  bottleColor: string;
-  bottleCap: string;
+  // bottleShape: string;
+  // bottleColor: string;
+  // bottleCap: string;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -54,6 +54,9 @@ export class SurveyWinConsoPage implements OnInit {
   }
 
   onSubmitForm() {
+    // this.surveyWinConso['bottleShape'] = this.bottleShape;
+    // this.surveyWinConso['bottleColor'] = this.bottleColor;
+    // this.surveyWinConso['bottleCap'] = this.bottleCap;
     let newWinForm = new WinForm(
       this.surveyWinConso.get('idForm').value,
       this.surveyWinConso.get('idTable').value,

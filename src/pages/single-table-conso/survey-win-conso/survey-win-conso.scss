@@ -12,6 +12,12 @@ page-survey-win-conso {
     height: 100%;
   }
 
+  ion-row {
+    ion-input {
+      color: transparent;
+    }
+  }
+
   .padding-bottom {
     padding-bottom: 1.4em;
   }
