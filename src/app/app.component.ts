@@ -21,7 +21,17 @@ export class MyApp {
     platform.ready().then(() => {
       statusBar.styleDefault();
       splashScreen.hide();
-      firebase.initializeApp(this.environment.fireBase);
+      // Initialize Firebase
+      let config = {
+        apiKey: "AIzaSyCQzMHgrKOSEnARFXNftpBFOOE3KK-26ZE",
+        authDomain: "jury-53d6c.firebaseapp.com",
+        databaseURL: "https://jury-53d6c.firebaseio.com",
+        projectId: "jury-53d6c",
+        storageBucket: "jury-53d6c.appspot.com",
+        messagingSenderId: "367277339227"
+      };
+      firebase.initializeApp(config);
+      // firebase.initializeApp(this.environment.fireBase);
     });
   }
 }
