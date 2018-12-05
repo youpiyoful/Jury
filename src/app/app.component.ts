@@ -5,7 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import * as firebase from 'firebase';
 
-import { Environment } from '../environment/environment';
+// import { Environment } from '../environment/environment';
 import { HomePage } from '../pages/home/home';
 
 @Component({
@@ -16,8 +16,8 @@ export class MyApp {
 
   constructor(platform: Platform,
               statusBar: StatusBar,
-              splashScreen: SplashScreen,
-              private environment: Environment) {
+              splashScreen: SplashScreen) {
+              // private environment: Environment
     platform.ready().then(() => {
       statusBar.styleDefault();
       splashScreen.hide();
