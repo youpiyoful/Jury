@@ -114,6 +114,69 @@
         </ion-footer>
       </ion-slide>
 
+      <ion-slide style="background-color: white">
+        <ion-header>
+          <h2>Slide 4</h2>
+        </ion-header>
+
+        <ion-row justify-content-around>
+          <ion-col col-3 align-self-center class="padding-bottom">
+            <ion-img width="84" height="257" src="../../assets/imgs/bottle.svg"></ion-img>
+          </ion-col>
+
+          <ion-col class="padding-bottom" col-3 align-self-end>
+            <form [formGroup]="surveyWinConso">
+              <ion-row>
+                <p>La forme de la bouteille</p>
+                <ion-input formControlName="labelColor" value={{labelColor}}></ion-input>
+              </ion-row>
+
+              <ion-row>
+                <p>La couleur de la bouteille</p>
+                <ion-input formControlName="labelShape" value={{labelShape}}></ion-input>
+              </ion-row>
+
+              <ion-row>
+                <p>La coiffe et la collerette</p>
+                <ion-input formControlName="labelMessage" value={{labelMessage}}></ion-input>
+              </ion-row>
+            </form>
+          </ion-col>
+
+          <ion-col col-3 align-self-center>
+            <ion-row justify-content-around>
+              <p>Positif</p>
+              <p>Neutre</p>
+              <p>Négatif</p>
+            </ion-row>
+
+            <ion-row justify-content-around radio-group [(ngModel)]="labelColor">
+              <ion-radio value="positif" color="dark"></ion-radio>
+              <ion-radio value="neutre" color="dark"></ion-radio>
+              <ion-radio value="negatif" color="dark"></ion-radio>
+            </ion-row>
+
+            <ion-row justify-content-around radio-group [(ngModel)]="labelShape">
+              <ion-radio value="positif" color="dark"></ion-radio>
+              <ion-radio value="neutre" color="dark"></ion-radio>
+              <ion-radio value="negatif" color="dark"></ion-radio>
+            </ion-row>
+
+            <ion-row justify-content-around radio-group [(ngModel)]="labelMessage">
+              <ion-radio value="positif" color="dark"></ion-radio>
+              <ion-radio value="neutre" color="dark"></ion-radio>
+              <ion-radio value="negatif" color="dark"></ion-radio>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+
+        <ion-footer>
+          <button ion-button col-2 push-4 round color="gold">
+            vin N°{{ iteratorWin }}/6
+          </button>
+        </ion-footer>
+      </ion-slide>
+
       <ion-slide style="background-color: red">
         <ion-header>
           <h2>Slide 4</h2>
