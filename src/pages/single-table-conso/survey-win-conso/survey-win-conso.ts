@@ -49,12 +49,13 @@ export class SurveyWinConsoPage implements OnInit {
       bottleCap: new FormControl(Validators.compose([Validators.required, Validators.minLength(1)])),
       labelColor: new FormControl(Validators.compose([Validators.required, Validators.minLength(1)])),
       labelShape: new FormControl(Validators.compose([Validators.required, Validators.minLength(1)])),
-      labelMessage: new FormControl(Validators.compose([Validators.required, Validators.minLength(1)]))
+      labelMessage: new FormControl(Validators.compose([Validators.required, Validators.minLength(1)])),
+      // isValidated: new FormControl(Validators.compose([Validators.required, Validators.minLength(1)]))
     });
   }
 
   onSubmitForm() {
-    this.surveyWinConso.value['isValidated'] = true;
+    // console.log(this.surveyWinConso.value['isValidated']);
     if ((this.surveyWinConso.value['bottleShape'] != "") &&
         (this.surveyWinConso.value['bottleColor'] != "") &&
         (this.surveyWinConso.value['bottleCap'] != "") &&
@@ -74,7 +75,7 @@ export class SurveyWinConsoPage implements OnInit {
         this.surveyWinConso.get('labelColor').value,
         this.surveyWinConso.get('labelShape').value,
         this.surveyWinConso.get('labelMessage').value,
-        this.surveyWinConso.get('isValidated').value
+        // this.surveyWinConso.get('isValidated').value
       );
       this.winsService.addWinForm(newWinForm);
       console.log(this.winsService.winFormList);

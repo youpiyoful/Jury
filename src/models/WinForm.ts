@@ -11,6 +11,6 @@ export class WinForm {
               public labelColor: string,
               public labelShape: string,
               public labelMessage: string,
-              public isValidated: boolean
+              // public isValidated: boolean
             ) {}
 }

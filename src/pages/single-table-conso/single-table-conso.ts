@@ -14,7 +14,7 @@ import { WinForm } from '../../models/WinForm';
 export class SingleTableConsoPage implements OnInit {
 
   table: number;
-  formExist: boolean;
+  // formExist: boolean;
   winForm: WinForm;
 
   constructor(public navCtrl: NavController,
@@ -34,11 +34,11 @@ export class SingleTableConsoPage implements OnInit {
     this.navCtrl.push(SurveyWinConsoPage, {idSurvey: [idTable.toString() + idWin.toString() + iterator.toString()]});
   }
 
-  onFormExist() {
-    if (this.winsService.winFormList['bottleCap']){
-      return this.formExist = true;
-    }
-  }
+  // onFormExist() {
+  //   if (this.winsService.winFormList['bottleCap']){
+  //     return this.formExist = true;
+  //   }
+  // }
 
   onSaveList() {
     if (this.winsService.winFormList.length < 6)

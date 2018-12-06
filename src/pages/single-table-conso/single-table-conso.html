@@ -13,8 +13,8 @@
   <ion-list>
     <button ion-item
             *ngFor="let win of winsService.winsFromTable; let i = index"
-            [disabled]="!winForm.isValidated"
             (click)="onGoToSurveyWin(table, win, i)">
+            <!-- [disabled]="!winForm.isValidated" -->
       Vin N°{{ win }} {{ i + 1}}/6
     </button>
   </ion-list>
