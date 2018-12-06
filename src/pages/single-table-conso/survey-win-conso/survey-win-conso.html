@@ -7,14 +7,14 @@
 
 <ion-content padding>
     <ion-slides pager>
-      <ion-slide style="background-color: green">
+      <ion-slide>
         <ion-header>
-          <h2>Slide 1</h2>
+          <h2>Que resentez vous à propos de ce vin ?</h2>
         </ion-header>
 
         <ion-range min="0" max="10" [(ngModel)]="blindTest" col-6 push-3 color="gold">
-          <ion-icon range-left  name="md-thumbs-down" color="gold"></ion-icon>
-          <ion-icon range-right name="md-thumbs-up" color="gold"></ion-icon>
+          <ion-icon range-left  name="ios-thumbs-down-outline" large color="gold"></ion-icon>
+          <ion-icon range-right name="ios-thumbs-up-outline" larger color="gold"></ion-icon>
         </ion-range>
 
         <form [formGroup]="surveyWinConso">
@@ -29,7 +29,7 @@
         </ion-footer>
       </ion-slide>
 
-      <ion-slide style="background-color: blue">
+      <ion-slide>
         <ion-header>
           <h2>Test bouteille et vin</h2>
         </ion-header>
@@ -51,7 +51,7 @@
         </ion-footer>
       </ion-slide>
 
-      <ion-slide style="background-color: red">
+      <ion-slide>
         <ion-header>
           <h2>La bouteille</h2>
         </ion-header>
@@ -88,21 +88,21 @@
             </ion-row>
 
             <ion-row justify-content-around radio-group [(ngModel)]="bottleShape">
-              <ion-radio value="positif" color="dark"></ion-radio>
-              <ion-radio value="neutre" color="dark"></ion-radio>
-              <ion-radio value="negatif" color="dark"></ion-radio>
+              <ion-radio value="positif" color="gold"></ion-radio>
+              <ion-radio value="neutre" color="gold"></ion-radio>
+              <ion-radio value="negatif" color="gold"></ion-radio>
             </ion-row>
 
             <ion-row justify-content-around radio-group [(ngModel)]="bottleColor">
-              <ion-radio value="positif" color="dark"></ion-radio>
-              <ion-radio value="neutre" color="dark"></ion-radio>
-              <ion-radio value="negatif" color="dark"></ion-radio>
+              <ion-radio value="positif" color="gold"></ion-radio>
+              <ion-radio value="neutre" color="gold"></ion-radio>
+              <ion-radio value="negatif" color="gold"></ion-radio>
             </ion-row>
 
             <ion-row justify-content-around radio-group [(ngModel)]="bottleCap">
-              <ion-radio value="positif" color="dark"></ion-radio>
-              <ion-radio value="neutre" color="dark"></ion-radio>
-              <ion-radio value="negatif" color="dark"></ion-radio>
+              <ion-radio value="positif" color="gold"></ion-radio>
+              <ion-radio value="neutre" color="gold"></ion-radio>
+              <ion-radio value="negatif" color="gold"></ion-radio>
             </ion-row>
           </ion-col>
         </ion-row>
@@ -151,21 +151,21 @@
             </ion-row>
 
             <ion-row justify-content-around radio-group [(ngModel)]="labelColor">
-              <ion-radio value="positif" color="dark"></ion-radio>
-              <ion-radio value="neutre" color="dark"></ion-radio>
-              <ion-radio value="negatif" color="dark"></ion-radio>
+              <ion-radio value="positif" color="gold"></ion-radio>
+              <ion-radio value="neutre" color="gold"></ion-radio>
+              <ion-radio value="negatif" color="gold"></ion-radio>
             </ion-row>
 
             <ion-row justify-content-around radio-group [(ngModel)]="labelShape">
-              <ion-radio value="positif" color="dark"></ion-radio>
-              <ion-radio value="neutre" color="dark"></ion-radio>
-              <ion-radio value="negatif" color="dark"></ion-radio>
+              <ion-radio value="positif" color="gold"></ion-radio>
+              <ion-radio value="neutre" color="gold"></ion-radio>
+              <ion-radio value="negatif" color="gold"></ion-radio>
             </ion-row>
 
             <ion-row justify-content-around radio-group [(ngModel)]="labelMessage">
-              <ion-radio value="positif" color="dark"></ion-radio>
-              <ion-radio value="neutre" color="dark"></ion-radio>
-              <ion-radio value="negatif" color="dark"></ion-radio>
+              <ion-radio value="positif" color="gold"></ion-radio>
+              <ion-radio value="neutre" color="gold"></ion-radio>
+              <ion-radio value="negatif" color="gold"></ion-radio>
             </ion-row>
           </ion-col>
         </ion-row>
@@ -177,7 +177,7 @@
         </ion-footer>
       </ion-slide>
 
-      <ion-slide style="background-color: red">
+      <ion-slide>
         <ion-header>
           <h2>Slide 4</h2>
         </ion-header>
