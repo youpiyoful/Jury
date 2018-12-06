@@ -57,6 +57,7 @@ export class SingleTableConsoPage implements OnInit {
             duration: 3000,
             position: 'bottom'
           }).present();
+          this.navCtrl.pop();
         },
         (error) => {
           loader.dismiss();
@@ -65,6 +66,7 @@ export class SingleTableConsoPage implements OnInit {
             duration: 3000,
             position: 'bottom'
           }).present();
+          // this.navCtrl.pop();
         }
       );
     }
