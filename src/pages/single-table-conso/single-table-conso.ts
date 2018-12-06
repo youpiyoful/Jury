@@ -14,6 +14,8 @@ import { WinForm } from '../../models/WinForm';
 export class SingleTableConsoPage implements OnInit {
 
   table: number;
+  formExist: boolean;
+  winForm: WinForm;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -25,35 +27,47 @@ export class SingleTableConsoPage implements OnInit {
     this.table = +this.navParams.get('numberTable'); // i use + for converting my numberTable string in a number variable
     this.winsService.retrieveData(this.table);
     this.winsService.winsFromTable; // i moove all the logic in winsService
+    this.winForm = this.winsService.winFormList['idForm'];
   }
 
   onGoToSurveyWin(idTable: number, idWin: number, iterator: number) {
     this.navCtrl.push(SurveyWinConsoPage, {idSurvey: [idTable.toString() + idWin.toString() + iterator.toString()]});
   }
 
+  onFormExist() {
+    if (this.winsService.winFormList['bottleCap']){
+      return this.formExist = true;
+    }
+  }
+
   onSaveList() {
-    let loader = this.loadingCtrl.create({
-      content: 'Sauvegarde en cours…'
-    });
-    loader.present();
-    this.winsService.saveData().then(
-      () => {
-        loader.dismiss();
-        this.toastCtrl.create({
-          message: 'Données sauvegardées !',
-          duration: 3000,
-          position: 'bottom'
-        }).present();
-      },
-      (error) => {
-        loader.dismiss();
-        this.toastCtrl.create({
-          message: error,
-          duration: 3000,
-          position: 'bottom'
-        }).present();
-      }
-    );
+    if (this.winsService.winFormList.length < 6)
+    {
+      alert('Veuillez renseigner tous les formulaires');
+    } else {
+      let loader = this.loadingCtrl.create({
+        content: 'Sauvegarde en cours…'
+      });
+      loader.present();
+      this.winsService.saveData().then(
+        () => {
+          loader.dismiss();
+          this.toastCtrl.create({
+            message: 'Données sauvegardées !',
+            duration: 3000,
+            position: 'bottom'
+          }).present();
+        },
+        (error) => {
+          loader.dismiss();
+          this.toastCtrl.create({
+            message: error,
+            duration: 3000,
+            position: 'bottom'
+          }).present();
+        }
+      );
+    }
   }
 
 }

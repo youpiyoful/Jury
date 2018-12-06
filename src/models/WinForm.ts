@@ -10,6 +10,7 @@ export class WinForm {
               public bottleCap: string,
               public labelColor: string,
               public labelShape: string,
-              public labelMessage: string
+              public labelMessage: string,
+              public isValidated: boolean
             ) {}
 }
