@@ -7,10 +7,39 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-item>
-    <!-- <ion-label floating></ion-label> -->
-    <ion-input type="number" [(ngModel)]="table"></ion-input>
-  </ion-item>
-  <button ion-button (click)="onGoToConsoTable(table)" [disabled]="!table || table <= 100 || table > 200">Consommateur</button>
-  <button ion-button (click)="onGoToProTable(table)" [disabled]="!table || table <= 100 || table > 200">Expert</button>
+  <ion-row justify-content-center>
+    <ion-item col-2>
+      <!-- <ion-label floating>N°</ion-label> -->
+      <ion-input type="number" [(ngModel)]="table"></ion-input>
+    </ion-item>
+  </ion-row>
+  <ion-row>
+    <ion-col col-5 push-3>
+      <ion-row justify-content-between>
+        <button ion-button
+                (click)="onGoToConsoTable(table)"
+                [disabled]="!table || table <= 100 || table > 200"
+                outline
+                color="dark"
+                col-4>
+                Consommateur
+        </button>
+
+        <button ion-button
+                (click)="onGoToProTable(table)"
+                [disabled]="!table || table <= 100 || table > 200"
+                outline
+                color="dark"
+                col-4>
+                Expert
+        </button>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col col-6 push-3>
+      <ion-img width="503" height="347" src="../../assets/imgs/table.png"></ion-img>
+    </ion-col>
+  </ion-row>
 </ion-content>
