@@ -40,8 +40,9 @@ export class SingleTableConsoPage implements OnInit {
   //   }
   // }
 
+  // Save the forms for all wins at a table in the dataBase
   onSaveList() {
-    if (this.winsService.winFormList.length < 6)
+    if (this.winsService.winFormList.length < 6)//control than all forms are 
     {
       alert('Veuillez renseigner tous les formulaires');
     } else {

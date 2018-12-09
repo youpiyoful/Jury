@@ -2,4 +2,9 @@ page-home {
   body {
     background: #EDEDED;
   }
+
+  .no-space-around {
+    pading: 0 !important;
+    margin: 0 !important;
+  }
 }
