@@ -19,7 +19,7 @@
 
         <form [formGroup]="surveyWinConso">
           <ion-label>Test aveugle</ion-label>
-          <ion-input formControlName="blindTest" value={{blindTest}} col-6 push-3>/10</ion-input>
+          <ion-input formControlName="blindTest" value={{blindTest}} col-6 push-3></ion-input>
         </form>
 
         <ion-footer>
@@ -35,12 +35,12 @@
         </ion-header>
 
         <ion-range min="0" max="10" [(ngModel)]="winAndBottleTest" col-6 push-3 color="gold">
-            <ion-icon range-left name="md-thumbs-down" color="gold">Je n'aime pas</ion-icon>
-            <ion-icon range-right name="md-thumbs-up" color="gold">J'aime</ion-icon>
+            <ion-icon range-left name="md-thumbs-down" color="gold"></ion-icon>
+            <ion-icon range-right name="md-thumbs-up" color="gold"></ion-icon>
         </ion-range>
 
         <form [formGroup]="surveyWinConso">
-          <ion-label>Quelle note attribuez-vous</ion-label>
+          <ion-label>Quelle note attribuez-vous ?</ion-label>
           <ion-input formControlName="winAndBottleTest" value={{winAndBottleTest}} col-6 push-3></ion-input>
         </form>
 
@@ -127,7 +127,7 @@
           <ion-col class="padding-bottom" col-3 align-self-end>
             <form [formGroup]="surveyWinConso">
               <ion-row>
-                <p>Le couleur</p>
+                <p>La couleur</p>
                 <ion-input formControlName="labelColor" value={{labelColor}}></ion-input>
               </ion-row>
 
@@ -179,7 +179,7 @@
 
       <ion-slide>
         <ion-header>
-          <h2>Slide 4</h2>
+          <h2>Validation du questionnaire</h2>
         </ion-header>
 
         <button ion-button color="gold" (click)="onSubmitForm()">Enregistrer</button>
