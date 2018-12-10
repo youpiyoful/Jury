@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { SingleTableConsoPage } from '../single-table-conso/single-table-conso';
 import { SingleTableProPage } from '../single-table-pro/single-table-pro';
-import { DataBasePage } from '../data-base/data-base';
 
 @Component({
   selector: 'page-home',
@@ -23,7 +22,7 @@ export class HomePage {
     this.navCtrl.push(SingleTableProPage, {numberTable: table});
   }
 
-  onGoToAdmin(){
-    this.navCtrl.push(DataBasePage);
-  }
+  // onGoToAdmin(){
+  //   this.navCtrl.push(DataBasePage);
+  // }
 }
